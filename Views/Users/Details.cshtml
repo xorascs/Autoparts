@@ -1,0 +1,164 @@
+﻿@model Autoparts.Models.User
+
+@{
+    ViewData["Title"] = "Details";
+}
+
+<h1>Details</h1>
+
+<div>
+    <h4>User</h4>
+    <hr />
+    <dl class="row">
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.Role)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.Role)
+        </dd>
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.Login)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.Login)
+        </dd>
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.Password)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.Password)
+        </dd>
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.RelatedParts)
+        </dt>
+        <dd class="col-sm-10">
+            @foreach (var rpart in Model.RelatedParts)
+            {
+                <div class="card col-md-4">
+                    <div class="card-body">
+                        <img src="~/photos/@rpart.Photos.First()" class="part-img"/>
+                        <h4><a class="text-decoration-none text-dark" asp-controller="Parts" asp-action="Details" asp-route-id="@rpart.Id">@rpart.Brand!.Name @rpart.Name</a></h4>
+                    </div>
+                </div>
+            }
+        </dd>
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.Wishes)
+        </dt>
+        <dd class="col-sm-10">
+            @if (Model!.Wishes != null && Model.Wishes.Count > 0)
+            {
+                @foreach (var w in Model.Wishes)
+                {
+                    <div class="card col-md-4">
+                        <div class="card-body">
+                            <img src="~/photos/@w.Part!.Photos.First()" class="part-img" />
+                            <h4><a class="text-decoration-none text-dark" asp-controller="Parts" asp-action="Details" asp-route-id="@w.Part.Id">@w.Part.Brand!.Name @w.Part.Name</a></h4>
+                            <p>@w.Comment</p>
+                            <small><strong>Created at: </strong> @w.CreateTime</small>
+                            @if (ViewBag.Id == Model.Id)
+                            {
+                                <form asp-action="RemoveFromWishes" asp-route-partId="@w.Part!.Id">
+                                    <input type="submit" class="btn btn-danger" value="Remove"/>
+                                </form>
+                            }
+                        </div>
+                    </div>
+                }
+            }
+            else
+            {
+                <p class="text-muted text-center mt-3">You have no wishes.</p>
+            }
+        </dd>
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.Reviews)
+        </dt>
+        <dd class="col-sm-10">
+            @if (Model!.Reviews != null && Model.Reviews.Count > 0)
+            {
+                foreach (var review in Model.Reviews)
+                {
+                    <div class="card">
+                        <div class="card-body">
+                            <div class="row">
+                                <div class="col-md-11">
+                                    <h4 class="mb-3"><a asp-controller="Parts" asp-action="Details" asp-route-id="@review.Part!.Id" class="text-decoration-none text-dark">@review.Part!.Brand!.Name @review.Part!.Name</a></h4>
+                                    <h4>@review.User!.Login <span class="badge bg-primary">@review.Rating</span></h4>
+                                    <p>@review.Comment</p>
+                                    <small class="text-muted">Created at: @review.CreateTime</small>
+                                </div>
+                                <div class="col-md-1">
+                                    @if (ViewBag.Role == "Admin" || ViewBag.Id == review.UserId)
+                                    {
+                                        <form asp-controller="Parts" asp-action="RemoveReview" asp-route-reviewId="@review.Id" asp-route-partId="@review.PartId" method="post">
+                                            <button type="submit" class="btn btn-danger">Remove</button>
+                                        </form>
+                                    }
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                }
+            }
+            else
+            {
+                <p class="text-muted text-center mt-3">You have no reviews.</p>
+            }
+        </dd>
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.Issues)
+        </dt>
+        <dd class="col-sm-10">
+            @if (Model!.Issues != null && Model.Issues.Count > 0)
+            {
+                foreach (var issue in Model.Issues)
+                {
+                    <div class="card">
+                        <div class="card-body">
+                            <div class="row">
+                                <div class="col-md-12">
+                                    <h4 class="mb-3">
+                                        <a asp-controller="Issues"
+                                           asp-action="Details"
+                                           asp-route-id="@issue.Id"
+                                           class="text-decoration-none text-dark">
+                                            @issue.Title
+                                        </a>
+                                        @(issue.Solved == true ?
+                                            @Html.Raw("<span class='badge bg-success'>Solved</span>") :
+                                            @Html.Raw("<span class='badge bg-primary'>In Progress</span>"))
+                                    </h4>
+                                    <div class="card">
+                                        <div class="card-body">
+                                            <strong>Participants:</strong>
+                                            @{
+                                                // Retrieve unique users from the messages associated with the current issue
+                                                var uniqueUsers = issue.Messages.Select(m => m.User)
+                                                .Where(u => u != null)
+                                                .Distinct()
+                                                .ToList();
+                                            }
+                                            @foreach (var user in uniqueUsers)
+                                            {
+                                                <span class="badge @(user.Id == ViewBag.Id ? "bg-primary" : "bg-secondary")">@user!.Login</span>
+                                            }
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                }
+            }
+            else
+            {
+                <p class="text-muted text-center mt-3">You have no issues.</p>
+            }
+        </dd>
+    </dl>
+</div>
+<div>
+    <a asp-action="Edit" asp-route-id="@Model?.Id">Edit</a> |
+    <a asp-action="Index">Back to List</a>
+</div>

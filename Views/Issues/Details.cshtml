@@ -1,0 +1,91 @@
+﻿@model Autoparts.Models.Issue
+
+@{
+    ViewData["Title"] = "Details";
+}
+
+<h1>Details</h1>
+
+<div>
+    <h4>Issue</h4>
+    <hr />
+    <dl class="row">
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.User)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.User.Login)
+        </dd>
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.Title)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.Title)
+        </dd>
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.Problem)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.Problem)
+        </dd>
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.Solved)
+        </dt>
+        <dd class = "col-sm-10">
+            @(Model.Solved == true ? @Html.Raw("<span class='badge bg-success'>Solved</span>") : @Html.Raw("<span class='badge bg-primary'>In Progress</span>"))
+        </dd>
+    </dl>
+    @if (ViewBag.Role == "Admin")
+    {
+        <form asp-action="ChangeIssueStatus" asp-route-issueId="@Model.Id">
+            <input type="submit" class="@(Model.Solved == true ? "btn btn-secondary" : "btn btn-primary")" value="@(Model.Solved == true ? "Unsolve" : "Solve")" />
+        </form>
+    }
+</div>
+
+<div class="card border-0">
+    <div class="card-body">
+        @if (Model.Messages != null && Model.Messages.Count > 0)
+        {
+            foreach(var message in Model.Messages)
+            {
+                <div class="card">
+                    <div class="card-body">
+                        <div class="row">
+                            <div class="col-md-11">
+                                <h4><a asp-action="Details" asp-controller="Users" asp-route-id="@message.UserId" class="text-decoration-none text-dark">@message.User!.Login</a></h4>
+                                <p>@message.Comment</p>
+                                <small class="text-muted">Created at: @message.CreateTime</small>
+                            </div>
+                            <div class="col-md-1">
+                                @if (ViewBag.Id == message.UserId)
+                                {
+                                    <form asp-action="RemoveMessage" asp-route-issueId="@Model.Id" asp-route-messageId="@message.Id" method="post">
+                                        <button type="submit" class="btn btn-danger" @(Model.Solved == true ? "disabled" : "")>Remove</button>
+                                    </form>
+                                }
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            }
+        }
+        else
+        {
+            <p class="text-muted text-center mt-3">Issue has no messages.</p>
+        }
+    </div>
+</div>
+
+<div class="card p-2 m-2">
+    <div class="card-body">
+        <form asp-action="AddMessage">
+            <input type="hidden" name="issueId" value="@Model.Id"/>
+            <textarea name="commentText" required @(Model.Solved == true ? "disabled" : "")></textarea>
+            <input type="submit" class="btn btn-primary" value="Submit" @(Model.Solved == true ? "disabled" : "") />
+        </form>
+    </div>
+</div>
+<div>
+    <a asp-action="Index">Back to List</a>
+</div>

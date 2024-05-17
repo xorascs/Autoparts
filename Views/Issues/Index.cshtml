@@ -1,0 +1,79 @@
+﻿@model IEnumerable<Autoparts.Models.Issue>
+
+@{
+    ViewData["Title"] = "Index";
+}
+
+<h1>Index</h1>
+
+<p>
+    <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#createIssueByUserModal">
+        Create New
+    </button>
+</p>
+<table class="table">
+    <thead>
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.User)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Title)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Problem)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Solved)
+            </th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+@foreach (var item in Model) {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.User.Login)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Title)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Problem)
+            </td>
+            <td>
+                @(item.Solved == true ? @Html.Raw("<span class='badge bg-success'>Solved</span>") : @Html.Raw("<span class='badge bg-primary'>In Progress</span>"))
+            </td>
+            <td>
+                <a asp-action="Details" asp-route-id="@item.Id">Details</a> |
+                <a asp-action="Delete" asp-route-id="@item.Id">Delete</a>
+            </td>
+        </tr>
+}
+    </tbody>
+</table>
+
+<!-- Modal structure -->
+<div class="modal fade" id="createIssueByUserModal" tabindex="-1" aria-labelledby="createIssueByUserModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title" id="createIssueByUserModalLabel">Create Issue</h5>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class="modal-body">
+                <form asp-action="CreateIssueByUser" asp-controller="Issues" method="post">
+                    <div class="mb-3">
+                        <label for="title" class="form-label">Title</label>
+                        <input type="text" class="form-control" name="title" required />
+                    </div>
+                    <div class="mb-3">
+                        <label for="problemText" class="form-label">Problem</label>
+                        <textarea class="form-control" name="problemText" required></textarea>
+                    </div>
+                    <button type="submit" class="btn btn-primary">Create Issue</button>
+                </form>
+            </div>
+        </div>
+    </div>
+</div>
