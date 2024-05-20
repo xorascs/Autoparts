@@ -17,127 +17,127 @@ build_property._SupportedPlatformList = Linux,macOS,Windows
 build_property._SupportedPlatformList = Linux,macOS,Windows
 build_property.RootNamespace = Autoparts
 build_property.RootNamespace = Autoparts
-build_property.ProjectDir = C:\Users\owner\Source\Repos\Autoparts\
+build_property.ProjectDir = C:\Users\owner\source\repos\Autoparts\
 build_property.EnableComHosting = 
 build_property.EnableGeneratedComInterfaceComImportInterop = 
 build_property.RazorLangVersion = 8.0
 build_property.SupportLocalizedComponentNames = 
 build_property.GenerateRazorMetadataSourceChecksumAttributes = 
-build_property.MSBuildProjectDirectory = C:\Users\owner\Source\Repos\Autoparts
+build_property.MSBuildProjectDirectory = C:\Users\owner\source\repos\Autoparts
 build_property._RazorSourceGeneratorDebug = 
 
-[C:/Users/owner/Source/Repos/Autoparts/Views/Brands/Create.cshtml]
+[C:/Users/owner/source/repos/Autoparts/Views/Brands/Create.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQnJhbmRzXENyZWF0ZS5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/owner/Source/Repos/Autoparts/Views/Brands/Delete.cshtml]
+[C:/Users/owner/source/repos/Autoparts/Views/Brands/Delete.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQnJhbmRzXERlbGV0ZS5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/owner/Source/Repos/Autoparts/Views/Brands/Edit.cshtml]
+[C:/Users/owner/source/repos/Autoparts/Views/Brands/Edit.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQnJhbmRzXEVkaXQuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/owner/Source/Repos/Autoparts/Views/Brands/Index.cshtml]
+[C:/Users/owner/source/repos/Autoparts/Views/Brands/Index.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQnJhbmRzXEluZGV4LmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/owner/Source/Repos/Autoparts/Views/Categories/Create.cshtml]
+[C:/Users/owner/source/repos/Autoparts/Views/Categories/Create.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQ2F0ZWdvcmllc1xDcmVhdGUuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/owner/Source/Repos/Autoparts/Views/Categories/Delete.cshtml]
+[C:/Users/owner/source/repos/Autoparts/Views/Categories/Delete.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQ2F0ZWdvcmllc1xEZWxldGUuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/owner/Source/Repos/Autoparts/Views/Categories/Edit.cshtml]
+[C:/Users/owner/source/repos/Autoparts/Views/Categories/Edit.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQ2F0ZWdvcmllc1xFZGl0LmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/owner/Source/Repos/Autoparts/Views/Categories/Index.cshtml]
+[C:/Users/owner/source/repos/Autoparts/Views/Categories/Index.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQ2F0ZWdvcmllc1xJbmRleC5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/owner/Source/Repos/Autoparts/Views/Home/Index.cshtml]
+[C:/Users/owner/source/repos/Autoparts/Views/Home/Index.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcSG9tZVxJbmRleC5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/owner/Source/Repos/Autoparts/Views/Issues/Delete.cshtml]
+[C:/Users/owner/source/repos/Autoparts/Views/Issues/Delete.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcSXNzdWVzXERlbGV0ZS5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/owner/Source/Repos/Autoparts/Views/Issues/Details.cshtml]
+[C:/Users/owner/source/repos/Autoparts/Views/Issues/Details.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcSXNzdWVzXERldGFpbHMuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/owner/Source/Repos/Autoparts/Views/Issues/Index.cshtml]
+[C:/Users/owner/source/repos/Autoparts/Views/Issues/Index.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcSXNzdWVzXEluZGV4LmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/owner/Source/Repos/Autoparts/Views/Parts/Create.cshtml]
+[C:/Users/owner/source/repos/Autoparts/Views/Parts/Create.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcUGFydHNcQ3JlYXRlLmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/owner/Source/Repos/Autoparts/Views/Parts/Delete.cshtml]
+[C:/Users/owner/source/repos/Autoparts/Views/Parts/Delete.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcUGFydHNcRGVsZXRlLmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/owner/Source/Repos/Autoparts/Views/Parts/Details.cshtml]
+[C:/Users/owner/source/repos/Autoparts/Views/Parts/Details.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcUGFydHNcRGV0YWlscy5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/owner/Source/Repos/Autoparts/Views/Parts/Edit.cshtml]
+[C:/Users/owner/source/repos/Autoparts/Views/Parts/Edit.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcUGFydHNcRWRpdC5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/owner/Source/Repos/Autoparts/Views/Parts/Index.cshtml]
+[C:/Users/owner/source/repos/Autoparts/Views/Parts/Index.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcUGFydHNcSW5kZXguY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/owner/Source/Repos/Autoparts/Views/Shared/Error.cshtml]
+[C:/Users/owner/source/repos/Autoparts/Views/Shared/Error.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2hhcmVkXEVycm9yLmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/owner/Source/Repos/Autoparts/Views/Shared/_ValidationScriptsPartial.cshtml]
+[C:/Users/owner/source/repos/Autoparts/Views/Shared/_ValidationScriptsPartial.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2hhcmVkXF9WYWxpZGF0aW9uU2NyaXB0c1BhcnRpYWwuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/owner/Source/Repos/Autoparts/Views/Users/Create.cshtml]
+[C:/Users/owner/source/repos/Autoparts/Views/Users/Create.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcVXNlcnNcQ3JlYXRlLmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/owner/Source/Repos/Autoparts/Views/Users/Delete.cshtml]
+[C:/Users/owner/source/repos/Autoparts/Views/Users/Delete.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcVXNlcnNcRGVsZXRlLmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/owner/Source/Repos/Autoparts/Views/Users/Details.cshtml]
+[C:/Users/owner/source/repos/Autoparts/Views/Users/Details.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcVXNlcnNcRGV0YWlscy5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/owner/Source/Repos/Autoparts/Views/Users/Edit.cshtml]
+[C:/Users/owner/source/repos/Autoparts/Views/Users/Edit.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcVXNlcnNcRWRpdC5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/owner/Source/Repos/Autoparts/Views/Users/Index.cshtml]
+[C:/Users/owner/source/repos/Autoparts/Views/Users/Index.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcVXNlcnNcSW5kZXguY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/owner/Source/Repos/Autoparts/Views/Users/Login.cshtml]
+[C:/Users/owner/source/repos/Autoparts/Views/Users/Login.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcVXNlcnNcTG9naW4uY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/owner/Source/Repos/Autoparts/Views/Users/Register.cshtml]
+[C:/Users/owner/source/repos/Autoparts/Views/Users/Register.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcVXNlcnNcUmVnaXN0ZXIuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/owner/Source/Repos/Autoparts/Views/_ViewImports.cshtml]
+[C:/Users/owner/source/repos/Autoparts/Views/_ViewImports.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcX1ZpZXdJbXBvcnRzLmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/owner/Source/Repos/Autoparts/Views/_ViewStart.cshtml]
+[C:/Users/owner/source/repos/Autoparts/Views/_ViewStart.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcX1ZpZXdTdGFydC5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/owner/Source/Repos/Autoparts/Views/Shared/_Layout.cshtml]
+[C:/Users/owner/source/repos/Autoparts/Views/Shared/_Layout.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2hhcmVkXF9MYXlvdXQuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = b-ur3fsd2fmy

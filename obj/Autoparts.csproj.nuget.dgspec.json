@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\owner\\Source\\Repos\\Autoparts\\Autoparts.csproj": {}
+    "C:\\Users\\owner\\source\\repos\\Autoparts\\Autoparts.csproj": {}
   },
   "projects": {
-    "C:\\Users\\owner\\Source\\Repos\\Autoparts\\Autoparts.csproj": {
+    "C:\\Users\\owner\\source\\repos\\Autoparts\\Autoparts.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\owner\\Source\\Repos\\Autoparts\\Autoparts.csproj",
+        "projectUniqueName": "C:\\Users\\owner\\source\\repos\\Autoparts\\Autoparts.csproj",
         "projectName": "Autoparts",
-        "projectPath": "C:\\Users\\owner\\Source\\Repos\\Autoparts\\Autoparts.csproj",
+        "projectPath": "C:\\Users\\owner\\source\\repos\\Autoparts\\Autoparts.csproj",
         "packagesPath": "C:\\Users\\owner\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\owner\\Source\\Repos\\Autoparts\\obj\\",
+        "outputPath": "C:\\Users\\owner\\source\\repos\\Autoparts\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
           "C:\\Users\\owner\\AppData\\Roaming\\NuGet\\NuGet.Config",
