@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "GX+1CuSshkFF600y3HT7sis5CUAUPb1pU5rMZvCDv50QJoAQvL2Qrx/AYdq8f+TQfXoaNsBrgqDSLjEdgG9fTQ==",
+  "dgSpecHash": "p91Il7fV2NandJMmYVuaB4R2QuEvLqwQczWghlEX16Fea26etpeB072GaOcVlXYNhMPcu2oYvx5rczoXIyfX0Q==",
   "success": true,
-  "projectFilePath": "C:\\Oskars_Projects\\Autoparts\\Autoparts.csproj",
+  "projectFilePath": "C:\\Users\\owner\\Source\\Repos\\Autoparts\\Autoparts.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\owner\\.nuget\\packages\\azure.core\\1.35.0\\azure.core.1.35.0.nupkg.sha512",
     "C:\\Users\\owner\\.nuget\\packages\\azure.identity\\1.10.3\\azure.identity.1.10.3.nupkg.sha512",

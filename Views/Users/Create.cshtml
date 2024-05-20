@@ -4,46 +4,50 @@
     ViewData["Title"] = "Create";
 }
 
-<h1>Create</h1>
+<div class="card rounded-5 mt-5 animate__animated animate__fadeInUp">
+    <div class="card-header bg-success rounded-5 py-5">
+        <h1 class="display-4 text-white text-center">Create User</h1>
+    </div>
+    <div class="card-body">
+        <div class="row justify-content-center">
+            <div class="col-md-4">
+                <form asp-action="Create">
+                    <div asp-validation-summary="ModelOnly" class="text-danger"></div>
 
-<h4>User</h4>
-<hr />
-<div class="row">
-    <div class="col-md-4">
-        <form asp-action="Create">
-            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
-            <div class="form-group">
-                <label asp-for="Role" class="control-label"></label>
-                <select asp-for="Role" class="form-select">
-                    <option value="" selected disabled>Role</option>
-                    @foreach(var role in Enum.GetValues(typeof(Role)))
-                    {
-                        <option value="@role">@role</option>
-                    }
-                </select>
-                <span asp-validation-for="Role" class="text-danger"></span>
+                    <div class="form-group mt-3">
+                        <label asp-for="Role" class="control-label"></label>
+                        <select asp-for="Role" class="form-select rounded-5 p-2">
+                            <option value="" selected disabled>Role</option>
+                            @foreach (var role in Enum.GetValues(typeof(Role)))
+                            {
+                                <option value="@role">@role</option>
+                            }
+                        </select>
+                        <span asp-validation-for="Role" class="text-danger"></span>
+                    </div>
+
+                    <div class="form-group mt-3">
+                        <input asp-for="Login" class="form-control rounded-5 p-2" placeholder="Login" />
+                        <span asp-validation-for="Login" class="text-danger"></span>
+                    </div>
+
+                    <div class="form-group mt-3">
+                        <input type="password" asp-for="Password" class="form-control rounded-5 p-2" placeholder="Password" />
+                        <span asp-validation-for="Password" class="text-danger"></span>
+                    </div>
+
+                    <div class="form-group mt-3 d-flex justify-content-between">
+                        <input type="submit" value="Create" class="btn btn-success rounded-5 p-2 px-5" />
+                        <a asp-action="Index" class="btn btn-outline-success rounded-5 pt-2 px-4">Back to List</a>
+                    </div>
+                </form>
             </div>
-            <div class="form-group">
-                <label asp-for="Login" class="control-label"></label>
-                <input asp-for="Login" class="form-control" />
-                <span asp-validation-for="Login" class="text-danger"></span>
-            </div>
-            <div class="form-group">
-                <label asp-for="Password" class="control-label"></label>
-                <input type="password" asp-for="Password" class="form-control" />
-                <span asp-validation-for="Password" class="text-danger"></span>
-            </div>
-            <div class="form-group">
-                <input type="submit" value="Create" class="btn btn-primary" />
-            </div>
-        </form>
+        </div>
     </div>
 </div>
 
-<div>
-    <a asp-action="Index">Back to List</a>
-</div>
-
 @section Scripts {
-    @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+    @{
+        await Html.RenderPartialAsync("_ValidationScriptsPartial");
+    }
 }

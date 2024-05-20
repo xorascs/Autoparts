@@ -267,6 +267,7 @@ namespace Autoparts.Controllers
             }
 
             var issue = await _context.Issues
+                .Include(u => u.User)
                 .FirstOrDefaultAsync(m => m.Id == id);
             if (issue == null)
             {

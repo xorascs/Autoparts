@@ -1,65 +1,43 @@
 ﻿@model IEnumerable<Autoparts.Models.Part>
 
 @{
-    ViewData["Title"] = "Index";
+    ViewData["Title"] = "Parts";
 }
 
-<h1>Index</h1>
+<div class="container animate__animated animate__fadeInUp">
+    <h1 class="text-center mb-4">Parts</h1>
 
-<p>
-    <a asp-action="Create">Create New</a>
-</p>
-<table class="table">
-    <thead>
-        <tr>
-            <th>
-                @Html.DisplayNameFor(model => model.Brand)
-            </th>
-            <th>
-                @Html.DisplayNameFor(model => model.Category)
-            </th>
-            <th>
-                @Html.DisplayNameFor(model => model.Name)
-            </th>
-            <th>
-                @Html.DisplayNameFor(model => model.Description)
-            </th>
-            <th>
-                @Html.DisplayNameFor(model => model.TotalRating)
-            </th>
-            <th>
-                @Html.DisplayNameFor(model => model.Photos)
-            </th>
-            <th></th>
-        </tr>
-    </thead>
-    <tbody>
-@foreach (var item in Model) {
-        <tr>
-            <td>
-                @Html.DisplayFor(modelItem => item.Brand.Name)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.Category.Name)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.Name)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.Description)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.TotalRating)
-            </td>
-            <td>
-                <img src="~/photos/@item.Photos.First()" class="part-img"/>
-            </td>
-            <td>
-                <a asp-action="Edit" asp-route-id="@item.Id">Edit</a> |
-                <a asp-action="Details" asp-route-id="@item.Id">Details</a> |
-                <a asp-action="Delete" asp-route-id="@item.Id">Delete</a>
-            </td>
-        </tr>
-}
-    </tbody>
-</table>
+    @if (ViewBag.Role == "Admin")
+    {
+        <p class="text-center">
+            <a asp-action="Create" class="btn btn-primary rounded-5">Create New</a>
+        </p>
+    }
+    <div class="row">
+        @foreach (var item in Model)
+        {
+            <div class="col-md-4 mb-4">
+                <div class="card rounded-5 h-100">
+                    <img src="~/photos/@item.Photos.First()" class="card-img-top rounded-5" alt="Part Image">
+                    <div class="card-body">
+                        <h5 class="card-title">@item.Name <span class="badge bg-primary">@item.TotalRating</span></h5>
+                    </div>
+                    <ul class="list-group list-group-flush">
+                        <li class="list-group-item">Brand: @item.Brand.Name</li>
+                        <li class="list-group-item">Category: @item.Category.Name</li>
+                    </ul>
+                    <div class="card-footer rounded-5 mt-4">
+                        <div class="btn-group d-inline-flex" role="group">
+                            <a asp-action="Details" asp-route-id="@item.Id" class="btn btn-outline-primary rounded-5 mx-2">Details</a>
+                            @if (ViewBag.Role == "Admin")
+                            {
+                                <a asp-action="Edit" asp-route-id="@item.Id" class="btn btn-primary rounded-5 mx-2">Edit</a>
+                                <a asp-action="Delete" asp-route-id="@item.Id" class="btn btn-danger rounded-5 mx-2">Delete</a>
+                            }
+                        </div>
+                    </div>
+                </div>
+            </div>
+        }
+    </div>
+</div>

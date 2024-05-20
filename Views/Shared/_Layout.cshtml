@@ -7,65 +7,92 @@
     <link rel="stylesheet" href="~/lib/bootstrap/dist/css/bootstrap.min.css" />
     <link rel="stylesheet" href="~/css/site.css" asp-append-version="true" />
     <link rel="stylesheet" href="~/Autoparts.styles.css" asp-append-version="true" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css" />
 
     <style>
         .part-img {
             width: 300px;
             height: 200px;
         }
+
+        .rounded-5 {
+            border-radius: 40px !important;
+        }
+
+        img[data-bs-toggle="modal"] {
+            cursor: pointer;
+        }
+
+        ::placeholder {
+            text-align: center !important;
+        }
+
+        .form-control:focus, .form-select:focus {
+            transition: .5s;
+            border-color: green;
+        }
+
+        .no-padding li {
+            height: 40px;
+        }
+
+        main {
+            margin-top: 60px;
+            margin-bottom: 200px;
+        }
     </style>
 </head>
 <body>
     <header>
-        <nav class="navbar navbar-expand-sm navbar-toggleable-sm navbar-light bg-white border-bottom box-shadow mb-3">
+        <nav class="navbar navbar-expand-sm navbar-toggleable-sm navbar-light bg-white border-bottom box-shadow mb-3 px-5 animate__animated animate__fadeIn">
             <div class="container-fluid">
+                <img src="~/ico.png" style="height: 50px; margin-right: 15px;" />
                 <a class="navbar-brand" asp-area="" asp-controller="Home" asp-action="Index">Autoparts</a>
                 <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target=".navbar-collapse" aria-controls="navbarSupportedContent"
                         aria-expanded="false" aria-label="Toggle navigation">
                     <span class="navbar-toggler-icon"></span>
                 </button>
                 <div class="navbar-collapse collapse d-sm-inline-flex justify-content-between">
-                    @if (ViewBag.Login != null)
-                    {
-                        <div class="card border-0">
-                            <a class="btn btn-primary" asp-area="" asp-controller="Users" asp-action="Details" asp-route-id="@ViewBag.Id">@ViewBag.Login</a>
-                        </div>
-                    }
-                    <ul class="navbar-nav flex-grow-1">
+                    <ul class="navbar-nav me-auto mb-2 mb-lg-0">
                         <li class="nav-item">
-                            <a class="nav-link text-dark" asp-area="" asp-controller="Home" asp-action="Index">Home</a>
+                            <a class="nav-link active" aria-current="page" asp-area="" asp-controller="Home" asp-action="Index">Home</a>
                         </li>
                         @if (ViewBag.Role == "Admin")
                         {
                             <li class="nav-item">
-                                <a class="nav-link text-dark" asp-area="" asp-controller="Brands" asp-action="Index">Brands</a>
+                                <a class="nav-link" asp-area="" asp-controller="Brands" asp-action="Index">Brands</a>
                             </li>
                             <li class="nav-item">
-                                <a class="nav-link text-dark" asp-area="" asp-controller="Categories" asp-action="Index">Categories</a>
+                                <a class="nav-link" asp-area="" asp-controller="Categories" asp-action="Index">Categories</a>
                             </li>
                             <li class="nav-item">
-                                <a class="nav-link text-dark" asp-area="" asp-controller="Users" asp-action="Index">Users</a>
+                                <a class="nav-link" asp-area="" asp-controller="Users" asp-action="Index">Users</a>
                             </li>
                         }
                         <li class="nav-item">
-                            <a class="nav-link text-dark" asp-area="" asp-controller="Issues" asp-action="Index">Issues</a>
+                            <a class="nav-link" asp-area="" asp-controller="Issues" asp-action="Index">Issues</a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link text-dark" asp-area="" asp-controller="Parts" asp-action="Index">Parts</a>
+                            <a class="nav-link" asp-area="" asp-controller="Parts" asp-action="Index">Parts</a>
                         </li>
+                    </ul>
+                    <ul class="navbar-nav">
                         @if (ViewBag.Login == null)
                         {
                             <li class="nav-item">
-                                <a class="nav-link text-dark" asp-area="" asp-controller="Users" asp-action="Login">Login</a>
+                                <a class="nav-link" asp-area="" asp-controller="Users" asp-action="Login">Login</a>
                             </li>
                             <li class="nav-item">
-                                <a class="nav-link text-dark" asp-area="" asp-controller="Users" asp-action="Register">Register</a>
+                                <a class="nav-link" asp-area="" asp-controller="Users" asp-action="Register">Register</a>
                             </li>
                         }
                         else
                         {
                             <li class="nav-item">
-                                <a class="nav-link text-dark" asp-area="" asp-controller="Users" asp-action="LogOut">Log out</a>
+                                <a class="btn btn-primary" asp-area="" asp-controller="Users" asp-action="Details" asp-route-id="@ViewBag.Id">@ViewBag.Login</a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link" asp-area="" asp-controller="Users" asp-action="LogOut">Log out</a>
                             </li>
                         }
                     </ul>
@@ -79,9 +106,29 @@
         </main>
     </div>
 
-    <footer class="border-top footer text-muted">
-        <div class="container">
-            &copy; 2024 - Autoparts
+    <footer class="border-top footer text-muted text-center text-lg-start animate__animated animate__fadeIn">
+        <div class="container p-4">
+            <div class="row">
+                <div class="col-lg-6 col-md-12 mb-4 mb-md-0">
+                    <h5 class="text-uppercase">Autoparts</h5>
+                    <p>
+                        Your one-stop shop for all automotive parts and accessories.
+                    </p>
+                </div>
+                <div class="col-lg-3 col-md-6 mb-4 mb-md-0">
+                    <h5 class="text-uppercase">Quick Links</h5>
+                    <ul class="list-unstyled mb-0 no-padding">
+                        <li><a asp-action="Index" asp-controller="Home" class="text-dark">Home</a></li>
+                        <li><a asp-action="Index" asp-controller="Parts" class="text-dark">Parts</a></li>
+                    </ul>
+                </div>
+                <div class="col-lg-3 col-md-6 mb-4 mb-md-0">
+                    <h5 class="text-uppercase">Contact</h5>
+                    <ul class="list-unstyled mb-0 no-padding">
+                        <li><a asp-action="Index" asp-controller="Issues" class="text-dark">Issues</a></li>
+                    </ul>
+                </div>
+            </div>
         </div>
     </footer>
     <script src="~/lib/jquery/dist/jquery.min.js"></script>

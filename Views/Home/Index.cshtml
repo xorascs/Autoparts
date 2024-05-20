@@ -2,7 +2,22 @@
     ViewData["Title"] = "Home Page";
 }
 
-<div class="text-center">
-    <h1 class="display-4">Welcome</h1>
-    <p>Learn about <a href="https://learn.microsoft.com/aspnet/core">building Web apps with ASP.NET Core</a>.</p>
+<div class="container animate__animated animate__fadeInUp">
+    <div class="row">
+        <div class="col-md-8 offset-md-2 text-center">
+            <h1 class="display-4 text-primary">Welcome to the Autoparts Catalog</h1>
+            <p class="lead">Explore our catalog of autoparts and report any issues you encounter.</p>
+            <p>Get started by browsing through our:</p>
+            <div class="row justify-content-center">
+                <div class="col-md-6">
+                    <a href="@Url.Action("Index", "Parts")" class="btn btn-primary btn-lg btn-block mb-3 rounded-5">Autoparts</a>
+                </div>
+                <div class="col-md-6">
+                    <a href="@Url.Action("Index", "Issues")" class="btn btn-secondary btn-lg btn-block rounded-5">Issues</a>
+                </div>
+            </div>
+            <p class="mt-4 text-muted">This website serves as a comprehensive catalog for autoparts, allowing users to browse and search for various automotive components. Whether you're looking for replacement parts or upgrades for your vehicle, you'll find a wide selection of products in our catalog.</p>
+            <p class="text-muted">If you encounter any issues while using our website or have suggestions for improvements, please don't hesitate to report them using the Issues feature. Your feedback helps us improve the user experience for all our visitors.</p>
+        </div>
+    </div>
 </div>

@@ -150,11 +150,6 @@ namespace Autoparts.Controllers
             return View(part);
         }
 
-        private decimal CalculateTotalRating(List<int> ratings)
-        {
-            return ratings.Sum() / ratings.Count();
-        }
-
         // POST: Issues/AddMessage
         [HttpPost]
         [ValidateAntiForgeryToken]
@@ -298,6 +293,11 @@ namespace Autoparts.Controllers
                         var fileName = $"{Guid.NewGuid()}_{Path.GetFileName(file.FileName)}";
                         var filePath = Path.Combine(Directory.GetCurrentDirectory(), "wwwroot", "photos", fileName);
 
+                        if (!Directory.Exists(Path.Combine(Directory.GetCurrentDirectory(), "wwwroot", "photos")))
+                        {
+                            Directory.CreateDirectory(Path.Combine(Directory.GetCurrentDirectory(), "wwwroot", "photos"));
+                        }
+
                         using (var fileStream = new FileStream(filePath, FileMode.Create))
                         {
                             await file.CopyToAsync(fileStream);
@@ -319,7 +319,6 @@ namespace Autoparts.Controllers
                 return View(part);
             }
         }
-
 
         // GET: Parts/Edit/5
         public async Task<IActionResult> Edit(int? id)

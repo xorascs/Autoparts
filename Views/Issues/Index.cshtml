@@ -1,57 +1,49 @@
 ﻿@model IEnumerable<Autoparts.Models.Issue>
 
 @{
-    ViewData["Title"] = "Index";
+    ViewData["Title"] = "Issues";
 }
 
-<h1>Index</h1>
-
-<p>
-    <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#createIssueByUserModal">
-        Create New
-    </button>
-</p>
-<table class="table">
-    <thead>
-        <tr>
-            <th>
-                @Html.DisplayNameFor(model => model.User)
-            </th>
-            <th>
-                @Html.DisplayNameFor(model => model.Title)
-            </th>
-            <th>
-                @Html.DisplayNameFor(model => model.Problem)
-            </th>
-            <th>
-                @Html.DisplayNameFor(model => model.Solved)
-            </th>
-            <th></th>
-        </tr>
-    </thead>
-    <tbody>
-@foreach (var item in Model) {
-        <tr>
-            <td>
-                @Html.DisplayFor(modelItem => item.User.Login)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.Title)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.Problem)
-            </td>
-            <td>
-                @(item.Solved == true ? @Html.Raw("<span class='badge bg-success'>Solved</span>") : @Html.Raw("<span class='badge bg-primary'>In Progress</span>"))
-            </td>
-            <td>
-                <a asp-action="Details" asp-route-id="@item.Id">Details</a> |
-                <a asp-action="Delete" asp-route-id="@item.Id">Delete</a>
-            </td>
-        </tr>
-}
-    </tbody>
-</table>
+<div class="row">
+    <div class="col">
+        <div class="card mt-5 rounded-5 animate__animated animate__fadeInUp">
+            <div class="card-header bg-primary py-3 rounded-5">
+                <h2 class="display-5 text-white text-center">Issues</h2>
+            </div>
+            <div class="card-body">
+                <div class="text-center mb-3">
+                    <button type="button" class="btn btn-primary rounded-5" data-bs-toggle="modal" data-bs-target="#createIssueByUserModal">
+                        Create New
+                    </button>
+                </div>
+                @foreach (var item in Model)
+                {
+                    <div class="card mb-3">
+                        <div class="card-header">
+                            <div class="row">
+                                <div class="col">
+                                    <h5 class="card-title">@Html.DisplayFor(modelItem => item.User.Login)</h5>
+                                </div>
+                                <div class="col-auto">
+                                    @(item.Solved == true ? @Html.Raw("<span class='badge bg-success'>Solved</span>") : @Html.Raw("<span class='badge bg-primary'>In Progress</span>"))
+                                </div>
+                            </div>
+                        </div>
+                        <div class="card-body">
+                            <h5 class="card-title">@Html.DisplayFor(modelItem => item.Title)</h5>
+                            <p class="card-text">@Html.DisplayFor(modelItem => item.Problem)</p>
+                            <a asp-action="Details" asp-route-id="@item.Id" class="btn btn-outline-primary rounded-5">Details</a>
+                            @if (ViewBag.Login == item.User.Login || ViewBag.Role == "Admin")
+                            {
+                                <a asp-action="Delete" asp-route-id="@item.Id" class="btn btn-danger rounded-5">Delete</a>
+                            }
+                        </div>
+                    </div>
+                }
+            </div>
+        </div>
+    </div>
+</div>
 
 <!-- Modal structure -->
 <div class="modal fade" id="createIssueByUserModal" tabindex="-1" aria-labelledby="createIssueByUserModalLabel" aria-hidden="true">
@@ -71,7 +63,7 @@
                         <label for="problemText" class="form-label">Problem</label>
                         <textarea class="form-control" name="problemText" required></textarea>
                     </div>
-                    <button type="submit" class="btn btn-primary">Create Issue</button>
+                    <button type="submit" class="btn btn-primary rounded-5">Create Issue</button>
                 </form>
             </div>
         </div>
